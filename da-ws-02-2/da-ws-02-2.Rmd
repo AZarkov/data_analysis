@@ -1,0 +1,118 @@
+---
+title: "da-ws-2"
+author: "Philipp Reiners, Lukas Burkert, Paulina Grigusova, Aleksandar Zarkov"
+date: "28 October 2016"
+output: html_document
+---
+
+```{r}
+
+# Case 1 - if-then-else statement 
+
+n <- 0
+if (n>1){
+  print("Larger")
+} else {
+  print("Smaller or equal")
+}
+
+# Case 2 - if-then-else statement extended
+
+n <- 7
+if (n>1){
+  print("Larger")
+} else if (n==1){
+  print("Equal")
+} else{
+  print("Smaller")
+}
+
+# Case 3 - Even or Odd
+
+n <- 9
+if (n %% 2 == 0){
+  print("Even")
+} else{
+  print("Odd")
+}
+
+# Case 4 - loop
+
+for (n in seq(0,2)){
+  if (n < 1){
+    print("Smaller")
+  } else if (n == 1){
+    print("Equal")
+  } else{
+    print("Larger")
+  }
+  n = n + 1
+}
+
+# Case 5 - loop-vector
+
+v <- c()
+for (n in seq(0,2)){
+  if (n < 1){
+    a <- "Smaller"
+    v <- c(v, a)
+  } else if (n == 1){
+    a <- "Equal"
+    v <- c(v, a)
+  } else{
+    a <- "Larger"
+    v <- c(v, a)
+  }
+  n <- n+1
+}
+print(v)
+
+# Case 6 - loop-list
+
+l = list()
+for (n in seq(0,2)){
+  if (n < 1){
+    a <- "Smaller"
+    l[[length(l)+1]] <- a
+  } else if (n == 1){
+    a <- "Equal"
+    l[[length(l)+1]] <- a
+  } else{
+    a <- "Large"
+    l[[length(l)+1]] <- a
+  }
+  
+  n <- n + 1
+}
+print(l)
+
+# Case 7 - lapply
+
+l = lapply (seq(0,2), function(n){
+  if (n < 1){
+    i <- "Smaller"
+  } else if (n == 1){
+    i <- "Equal"
+  } else{
+    i <- "Larger"
+  }
+  return(i)
+})
+print(l)
+
+# Case 8 - lapply-unlist
+
+j = lapply (seq(0,2), function(n){
+  if (n < 1){
+    i <- "Smaller"
+  } else if (n == 1){
+    i <- "Equal"
+  } else{
+    i <- "Larger"
+  }
+  n <- n + 1
+  return(i)
+})
+
+print(unlist(j))
+
