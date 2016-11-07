@@ -48,7 +48,7 @@ lines(Eiche,type='o',pch=22, col='blue')
 axis(1, at=1:18,lab=c(1997:2014))
 legend(1,6000,legend=c("Buche","Eiche"),col=c("red","blue"),lty=1:1,cex=0.8)
 
-#Plot the time span difference in the counts between Buche and Eiche
+#Plot the time span difference in the counts between Buche and Kiefer
 plot(Buche,type='o', pch=24, col='red',ylim=c(0,7000),xaxt='n', ann=F)
 title(xlab="Year", col.lab=rgb(0,0.5,0))
 title(ylab="Count", col.lab=rgb(0,0.5,0))
@@ -56,7 +56,7 @@ lines(Kiefer,type='o',pch=22, col='yellow')
 axis(1, at=1:18,lab=c(1997:2014))
 legend(1,6000,legend=c("Buche","Kiefer"),col=c("red","yellow"),lty=1:1,cex=0.8)
 
-#Plot the time span difference in the counts between Buche and Eiche
+#Plot the time span difference in the counts between Buche and Buntholz
 plot(Buche,type='o', pch=24, col='red',ylim=c(0,7000),lty=1:1,cex=0.8,xaxt='n',ann=F)
 title(xlab="Year", col.lab=rgb(0,0.5,0))
 title(ylab="Count", col.lab=rgb(0,0.5,0))
@@ -64,7 +64,7 @@ lines(Buntholz,type='o',pch=22, col='black')
 axis(1, at=1:18,lab=c(1997:2014))
 legend(1,6000,legend=c("Buche","Buntholz"),col=c("red","black"),lty=1:1,cex=0.8)
 
-#Plot the time span difference in the counts between Buche and Eiche
+#Plot the time span difference in the counts between Buche and Fichte
 plot(Buche,type='o', pch=22, col='red',ylim=c(0,7000),lty=1:1,cex=0.8,xaxt='n',ann=F)
 title(xlab="Year", col.lab=rgb(0,0.5,0))
 title(ylab="Count", col.lab=rgb(0,0.5,0))
