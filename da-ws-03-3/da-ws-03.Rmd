@@ -1,0 +1,79 @@
+---
+title: "da-ws-03"
+author: "Philipp Reiners, Lukas Burkert, Paulina Grigusova, Aleksandar Zarkov"
+date: "7 November 2016"
+output: html_document
+---
+
+```{r}
+setwd("D:/R_Data_Marburg/R_data_managing/Data_Analysis_course/Exercise3_011116")
+
+# Read the table
+df <- read.table("hessen_holzeinschlag_1997-2014.csv", 
+                 skip = 4,header=TRUE, sep = ',',dec='.')
+
+# Removes the unnecessary row
+df <- df[-19,]
+df
+
+# Write a table
+write.table(df, "hessen_holzeinschlag_1997-2014_clean.csv", dec = ".", sep = ",")
+
+# Exercise 1
+
+# Sum the counts by species
+Count<- c(sum(df$Eiche), sum(df$Buche), sum(df$Buntholz), sum(df$Fichte), sum(df$Kiefer))
+
+# Vector with the names
+Trees<- c("Eiche", "Buche", "Buntholz", "Fichte", "Kiefer")
+df1 <- data.frame(Trees, Count)
+
+#Plot the counts of different tree species
+plot(df1)
+
+# Exercise 2
+
+#Create vector for every tree species/group of trees
+Eiche<- c(df$Eiche)
+Buche<-c(df$Buche)
+Kiefer<-c(df$Kiefer)
+Fichte<-c(df$Fichte)
+Buntholz<-c(df$Buntholz)
+
+#Plot the time span difference in the counts between Buche and Eiche
+plot(Buche,type='o', pch=24, col='red',ylim=c(0,7000),xaxt='n',ann=F)
+title(xlab="Year", col.lab=rgb(0,0.5,0))
+title(ylab="Count", col.lab=rgb(0,0.5,0))
+lines(Eiche,type='o',pch=22, col='blue')
+axis(1, at=1:18,lab=c(1997:2014))
+legend(1,6000,legend=c("Buche","Eiche"),col=c("red","blue"),lty=1:1,cex=0.8)
+
+#Plot the time span difference in the counts between Buche and Eiche
+plot(Buche,type='o', pch=24, col='red',ylim=c(0,7000),xaxt='n', ann=F)
+title(xlab="Year", col.lab=rgb(0,0.5,0))
+title(ylab="Count", col.lab=rgb(0,0.5,0))
+lines(Kiefer,type='o',pch=22, col='yellow')
+axis(1, at=1:18,lab=c(1997:2014))
+legend(1,6000,legend=c("Buche","Kiefer"),col=c("red","yellow"),lty=1:1,cex=0.8)
+
+#Plot the time span difference in the counts between Buche and Eiche
+plot(Buche,type='o', pch=24, col='red',ylim=c(0,7000),lty=1:1,cex=0.8,xaxt='n',ann=F)
+title(xlab="Year", col.lab=rgb(0,0.5,0))
+title(ylab="Count", col.lab=rgb(0,0.5,0))
+lines(Buntholz,type='o',pch=22, col='black')
+axis(1, at=1:18,lab=c(1997:2014))
+legend(1,6000,legend=c("Buche","Buntholz"),col=c("red","black"),lty=1:1,cex=0.8)
+
+#Plot the time span difference in the counts between Buche and Eiche
+plot(Buche,type='o', pch=22, col='red',ylim=c(0,7000),lty=1:1,cex=0.8,xaxt='n',ann=F)
+title(xlab="Year", col.lab=rgb(0,0.5,0))
+title(ylab="Count", col.lab=rgb(0,0.5,0))
+lines(Fichte,type='o',pch=22, col='green')
+axis(1, at=1:18,lab=c(1997:2014))
+legend(1,6000,legend=c("Buche","Fichte"),col=c("red","green"),lty=1:1,cex=0.8)
+
+
+
+
+
+```
